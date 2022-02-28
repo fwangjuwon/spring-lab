@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> 글 목록 페이지 입니다. </h1>
+    <hr/>
+    {{#posts}}
+id: {{id}}  title:{{title}}  content:{{content}} <br/><!-- 원래 title(변수)은 private라서 호출 못한다. 실제로는 getTitle을 때려준다.-->
+{{/posts}}
+
+<!--
+    jsp 였다면
+    <%
+       List<Post> posts = (List<Post>) request.getAttribute("posts");
+    %>
+    
+    <% for(int i=0; i<posts.size(); i++) { %>
+          id : <%=posts.get(i).getId() %> title : <%=posts.get(i).getTitle() %> content : <%=posts.get(i).getContent() %>
+     <% } %>
+-->
+</body>
+</html>
